@@ -27,6 +27,9 @@ $projects = [];
 foreach ( $rows as $row ) {
     [ $type, $project, ] = explode( "\t", $row );
     if ( $type === 'project' ) {
+        if ( !str_contains( $project, '.' ) ) {
+            $project = "www.$project";
+        }
         $projects[] = "https://$project.org";
     }
 }
@@ -45,7 +48,7 @@ $rows = $stmt->get_result()->fetch_all( MYSQLI_ASSOC );
 $client->close();
 $projectsWithDbNames = [];
 foreach ( $rows as $row ) {
-    $domain = preg_replace( '/^https:\/\/(.*)\.org/', '\1', $row['url'] );
+    $domain = preg_replace( '/^https:\/\/(?:www\.)?(.*)\.org/', '\1', $row['url'] );
     $projectsWithDbNames[$domain] = $row['dbname'];
 }
 
