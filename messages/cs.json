@@ -223,7 +223,7 @@
 	"none": "Žádné",
 	"note": "Poznámka",
 	"november": "listopad",
-	"num-bytes": "$1 {{PLURAL:$2|byte|byty|bytů}}",
+	"num-bytes": "$1 {{PLURAL:$2|bajt|bajty|bajtů}}",
 	"num-days-span": "$1denní rozpětí",
 	"num-files": "$1 {{PLURAL:$2|soubor|soubory|souborů}}",
 	"num-files-info": "Zadejte až $1 {{PLURAL:$1|soubor|soubory|souborů}}",
