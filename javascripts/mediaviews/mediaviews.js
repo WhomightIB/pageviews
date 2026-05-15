@@ -155,7 +155,7 @@ class MediaViews extends mix(Pv).with(ChartHelpers) {
 
         fileData[file.replace(/^File:/, '').descore()] = Object.assign({
           title: file,
-          path: decodeURIComponent((fileInfo.url || '').replace('https://upload.wikimedia.org', ''))
+          path: decodeURIComponent((new URL(fileInfo.url)).pathname)
         }, fileInfo);
       });
 
